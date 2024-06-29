@@ -1,0 +1,3 @@
+.venv
+data/**
+checkpoint_best.pth
