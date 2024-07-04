@@ -1,5 +1,3 @@
-
-
 from src.dataset import SentimentDataset
 from src.model import SentimentModel
 from src.trainer import Trainer
@@ -10,12 +8,20 @@ import torch
 
 
 print("Creating Datasets...")
-train_dataset = SentimentDataset("/Users/goncalopes/Documents/sntmnt_analysis/data/processed/train.txt")
-val_dataset = SentimentDataset("/Users/goncalopes/Documents/sntmnt_analysis/data/processed/val.txt")
+train_dataset = SentimentDataset(
+    "/Users/goncalopes/Documents/sntmnt_analysis/data/processed/train.txt"
+)
+val_dataset = SentimentDataset(
+    "/Users/goncalopes/Documents/sntmnt_analysis/data/processed/val.txt"
+)
 
 print("Creating Dataloaders...")
-train_dataloader = DataLoader(train_dataset, batch_size=64, collate_fn=train_dataset.collate_batch)
-val_dataloader = DataLoader(val_dataset, batch_size=64, collate_fn=val_dataset.collate_batch)
+train_dataloader = DataLoader(
+    train_dataset, batch_size=64, collate_fn=train_dataset.collate_batch
+)
+val_dataloader = DataLoader(
+    val_dataset, batch_size=64, collate_fn=val_dataset.collate_batch
+)
 
 print("Creating Model...")
 vocab_size = len(train_dataset.vocab)
@@ -30,4 +36,3 @@ print("Creating Trainer...")
 trainer = Trainer(model, train_dataloader, val_dataloader, 10, 0.001)
 
 trainer.train()
-

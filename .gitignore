@@ -1,3 +1,5 @@
 .venv
 data/**
 checkpoint_best.pth
+.DS_Store
+.vscode

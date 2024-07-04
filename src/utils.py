@@ -3,7 +3,7 @@ def preprocess_file(filepath):
         lines = f.readlines()
     texts = []
     labels = []
-    
+
     for line in lines:
         label, text = line.split(" ", maxsplit=1)
         texts.append(text)
