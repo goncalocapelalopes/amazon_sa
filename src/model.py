@@ -9,6 +9,9 @@ class SentimentModel(nn.Module):
         self.lstm = nn.LSTM(embed_dim, hidden_dim, batch_first=True)
         self.fc = nn.Linear(hidden_dim, output_dim)
 
+
+
+
     def forward(self, text):
         embedded = self.embedding(text)
         output, (hidden, _) = self.lstm(embedded)

@@ -1,10 +1,12 @@
+
+from src.utils import preprocess_file
 import torch
 from torchtext.data.utils import get_tokenizer
 from torchtext.vocab import build_vocab_from_iterator
 from torch.utils.data import Dataset
 from torch.nn.utils.rnn import pad_sequence
 
-from src.utils import preprocess_file
+
 
 
 class SentimentDataset(Dataset):
